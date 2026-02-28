@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { portfolio } from './data'
 import './App.css'
 import heroBg from './assets/background.png'
@@ -493,6 +494,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   )
 }
