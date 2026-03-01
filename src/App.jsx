@@ -298,66 +298,8 @@ function App() {
       <section className="section news" id="news">
         <h2 className="section-title">Latest <span className="title-accent">News</span></h2>
         <p className="section-subtitle">Updates on projects, achievements, and industry insights</p>
-        <div className="news-list">
-          {portfolio.news.map((item, i) => (
-            <article key={i} className="news-card">
-              <div className="news-card-top">
-                <div className="news-card-media">
-                  {item.image ? (
-                    <img src={item.image} alt="" />
-                  ) : (
-                    <div className="news-card-placeholder">No image</div>
-                  )}
-                </div>
-                <div className="news-card-body">
-                  <div className="news-meta">
-                    <span className="news-type">{item.type}</span>
-                    <span className="news-date">{item.date}</span>
-                    <span className="news-comments">{item.comments} Comments</span>
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p className="news-excerpt">{item.excerpt}</p>
-                  <button
-                    type="button"
-                    className={`btn btn-primary news-read-more ${expandedNews === i ? 'is-expanded' : ''}`}
-                    onClick={() => setExpandedNews(expandedNews === i ? null : i)}
-                    aria-expanded={expandedNews === i}
-                    aria-controls={`news-article-${i}`}
-                  >
-                    {expandedNews === i ? 'Show Less' : 'Read More'}
-                  </button>
-                </div>
-              </div>
-              {expandedNews === i && (
-                <div id={`news-article-${i}`} className="news-full" role="region" aria-label="Article details">
-                  {item.fullArticle ? (
-                    <>
-                      <p>{item.fullArticle}</p>
-                      {item.commentsList && (
-                        <div className="comments">
-                          <h4>Comments ({item.commentsList.length})</h4>
-                          {item.commentsList.map((c, j) => (
-                            <div key={j} className="comment">
-                              <strong>{c.author}</strong> <span>{c.date}</span>
-                              <p>{c.text}</p>
-                            </div>
-                          ))}
-                          <div className="comment-form">
-                            <h4>Leave a Comment</h4>
-                            <input placeholder="Your Name" />
-                            <textarea placeholder="Share your thoughts..." rows={3} />
-                            <button className="btn btn-primary">Post Comment</button>
-                          </div>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <p className="news-no-article">Full article not available.</p>
-                  )}
-                </div>
-              )}
-            </article>
-          ))}
+        <div className="news-coming-soon">
+          <p>Coming soon</p>
         </div>
       </section>
 
