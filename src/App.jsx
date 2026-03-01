@@ -273,7 +273,31 @@ function App() {
         <div className="certs-grid">
           {portfolio.certifications.map((c, i) => (
             <div key={i} className="cert-card">
-              <div className="cert-badge-icon" aria-hidden>✓</div>
+              <div className="cert-badge-icon" aria-hidden>
+                <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="cert-badge-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#f5e6a8"/>
+                      <stop offset="40%" stopColor="#e8c84a"/>
+                      <stop offset="100%" stopColor="#c9a227"/>
+                    </linearGradient>
+                    <linearGradient id="cert-badge-ribbon" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#d4af37"/>
+                      <stop offset="50%" stopColor="#f0d050"/>
+                      <stop offset="100%" stopColor="#d4af37"/>
+                    </linearGradient>
+                  </defs>
+                  {/* Serrated circular medal (24 peaks) */}
+                  <path d="M58 32L52.3 37.4 54.5 45 46.8 46.8 42.5 54.5 37.4 52.3 32 58 26.6 52.3 21.5 54.5 17.2 46.8 9.5 45 11.7 37.4 6 32 11.7 26.6 9.5 19 17.2 17.2 21.5 9.5 26.6 10.7 32 6 37.4 10.7 42.5 9.5 46.8 17.2 54.5 19 52.3 26.6Z" fill="url(#cert-badge-gold)" stroke="#b8961e" strokeWidth="0.6" strokeLinejoin="round"/>
+                  {/* Inner smooth circle */}
+                  <circle cx="32" cy="32" r="16" fill="url(#cert-badge-gold)" stroke="#b8961e" strokeWidth="0.5"/>
+                  {/* Dotted border ring */}
+                  <circle cx="32" cy="32" r="20" fill="none" stroke="#b8961e" strokeWidth="0.8" strokeDasharray="2 2.5" opacity="0.9"/>
+                  {/* Two hanging ribbons */}
+                  <rect x="24" y="56" width="6" height="20" rx="1.5" fill="url(#cert-badge-ribbon)" stroke="#b8961e" strokeWidth="0.4"/>
+                  <rect x="34" y="56" width="6" height="20" rx="1.5" fill="url(#cert-badge-ribbon)" stroke="#b8961e" strokeWidth="0.4"/>
+                </svg>
+              </div>
               <h4 className="cert-name">{c.name}</h4>
               <p className="cert-org">{c.org}</p>
               <span className="cert-year">{c.year}</span>

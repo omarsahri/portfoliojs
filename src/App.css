@@ -831,7 +831,6 @@ section:nth-of-type(even) .about-me-picture {
 .cert-badge-icon {
   font-size: 2.5rem;
   line-height: 1;
-  color: var(--accent);
   margin-bottom: 0.6rem;
   width: 3.25rem;
   height: 3.25rem;
@@ -840,7 +839,12 @@ section:nth-of-type(even) .about-me-picture {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(9, 105, 218, 0.1);
+  background: rgba(201, 162, 39, 0.12);
+}
+
+.cert-badge-icon svg {
+  height: 2.5rem;
+  width: auto;
 }
 
 .cert-name {
