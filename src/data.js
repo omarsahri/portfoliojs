@@ -28,7 +28,7 @@ export const portfolio = {
     {
       role: "Automation Engineer",
       company: "Marmon Holdings Inc. - Marmon Metals and Services",
-      period: "Jan 2025 - Present",
+      period: "Jan 2025 - Jan 2026",
       location: "Atlanta, United States",
       current: true,
       bullets: [
