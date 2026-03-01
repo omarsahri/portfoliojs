@@ -29,7 +29,7 @@ export const portfolio = {
       role: "Automation Engineer",
       company: "Marmon Holdings Inc. - Marmon Metals and Services",
       period: "Jan 2025 - Present",
-      location: "Paris, France",
+      location: "Atlanta, United States",
       current: true,
       bullets: [
         "Gained exposure to PLC programming (Allen-Bradley) and HMI interfaces during hardware integration and system testing phases",
@@ -41,7 +41,7 @@ export const portfolio = {
       role: "Automation Engineer",
       company: "Marmon Holdings Inc. - Marmon/Keystone",
       period: "Sep 2023 - Dec 2024",
-      location: "Paris, France",
+      location: "Atlanta, United States",
       bullets: [
         "Validated RFID robot performance, achieving 99% inventory data collection accuracy across 10,000 SKUs using ROS and Gazebo, significantly reducing discrepancies and enhancing operational reliability",
         "Optimized operational workflows by developing interactive Power BI dashboards for real-time analytics, accelerating management decision-making by 25% and boosting overall efficiency across three warehouse facilities",
@@ -53,7 +53,7 @@ export const portfolio = {
       role: "Automation Engineer - Co-op",
       company: "Marmon Holdings Inc.",
       period: "Jan 2023 - Aug 2023",
-      location: "Paris, France",
+      location: "Chicago, United States",
       bullets: [
         "Supported performance improvement initiatives by analyzing material handling processes, contributing to actions that reduced downtime by 20% and increased throughput by 30%",
         "Collaborated with cross-functional teams to integrate new automation solutions, improving overall system efficiency",
