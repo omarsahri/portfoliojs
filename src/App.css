@@ -953,14 +953,17 @@ section:nth-of-type(even) .about-me-picture {
 /* News */
 .news-list { display: grid; gap: 1.5rem; }
 
-.news-coming-soon {
+.news-list.news-coming-soon {
+  display: block;
   text-align: center;
-  padding: 3rem 1.5rem;
-  color: var(--text-muted);
-  font-size: 1.1rem;
+  padding: 3rem 1rem;
 }
 
-.news-coming-soon p { margin: 0; }
+.news-coming-soon-text {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
 
 .news-card {
   display: grid;

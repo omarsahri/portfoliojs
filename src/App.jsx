@@ -298,8 +298,8 @@ function App() {
       <section className="section news" id="news">
         <h2 className="section-title">Latest <span className="title-accent">News</span></h2>
         <p className="section-subtitle">Updates on projects, achievements, and industry insights</p>
-        <div className="news-coming-soon">
-          <p>Coming soon</p>
+        <div className="news-list news-coming-soon">
+          <p className="news-coming-soon-text">Coming soon</p>
         </div>
       </section>
 
