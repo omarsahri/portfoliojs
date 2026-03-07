@@ -12,6 +12,27 @@
   --max-width: min(1120px, 96vw);
   /* Intro background image: change 0.6 to adjust transparency (0 = full image, 1 = solid gray) */
   --intro-bg-overlay: 0.92;
+  --hero-overlay: rgba(246, 248, 250, var(--intro-bg-overlay));
+}
+
+/* Dark theme */
+html[data-theme="dark"] {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --bg-elevated: #21262d;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #79c0ff;
+  --success: #3fb950;
+  --hero-overlay: rgba(13, 17, 23, 0.92);
+}
+
+html[data-theme="dark"] .header {
+  background: rgba(13, 17, 23, 0.9);
+  border-bottom-color: var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -57,13 +78,40 @@ body {
   letter-spacing: 0.04em;
 }
 
-.header .btn-header-cta {
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   justify-self: end;
-  margin-left: 1rem;
   margin-right: -0.4rem;
+}
+
+.header .btn-header-cta {
+  margin-left: 0;
   padding: 0.55rem 1rem;
   font-size: 0.8rem !important;
   font-weight: 700 !important;
+}
+
+.header-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.header-theme-toggle:hover {
+  color: var(--text);
+  background: var(--bg-card);
+  border-color: var(--accent);
 }
 
 .logo-accent {
@@ -286,8 +334,8 @@ section:nth-of-type(even) .about-me-picture {
   pointer-events: none;
   background-image: linear-gradient(
       to bottom,
-      rgba(246, 248, 250, var(--intro-bg-overlay)),
-      rgba(246, 248, 250, var(--intro-bg-overlay))
+      var(--hero-overlay),
+      var(--hero-overlay)
     ),
     var(--hero-bg-url);
   background-size: cover;
