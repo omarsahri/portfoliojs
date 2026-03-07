@@ -414,8 +414,8 @@ function App() {
       </section>
 
       <section className="section testimonials" id="testimonials">
-        <h2 className="section-title">What People <span className="title-accent">Say</span></h2>
-        <p className="section-subtitle">Feedback from colleagues and team members I've worked with</p>
+        <h2 className="section-title">People I've <span className="title-accent">Worked With</span></h2>
+        <p className="section-subtitle">Colleagues and team members from my professional experience</p>
         <div className="testimonial-carousel">
           <div className="carousel-track">
             {testimonials.map((t, i) => (
