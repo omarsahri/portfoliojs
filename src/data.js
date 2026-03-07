@@ -2,7 +2,7 @@ export const portfolio = {
   name: "Omar Sahri",
   title: "Automation Engineer",
   location: "Paris, France",
-  tagline: "Robotics & Industrial Automation Engineer",
+  tagline: "Robotics & Industrial Automation",
   description: "Specializing in industrial project management, industrial robotics, and ROS/ROS2 development, with a focus on warehouse automation. Passionate about building intelligent systems that drive efficiency and innovation.",
   email: "or.sahri@gmail.com",
   phone: "+33 7 59 72 11 31",
@@ -11,9 +11,10 @@ export const portfolio = {
 
   stats: [
     { value: "3+", label: "Years Experience" },
-    { value: "15+", label: "Projects Completed" },
-    { value: "99%", label: "Inventory Accuracy" },
-    { value: "$100K+", label: "Cost Savings" },
+    { value: "5+", label: "Automation Deployments" },
+    { value: "1", label: "AMR Deployed" },
+    { value: "$100K+", label: "Annual Savings" },
+    { value: "10+ sites", label: "Lean Initiatives" },
   ],
 
   whoIAm: {
@@ -32,9 +33,11 @@ export const portfolio = {
       location: "Atlanta, United States",
       current: false,
       bullets: [
-        "Gained exposure to PLC programming (Allen-Bradley) and HMI interfaces during hardware integration and system testing phases",
-        "Supported field testing and deployment of robotic systems at operational sites; collaborated with stakeholders to ensure performance objectives were met",
-        "Developing a warehouse process simulation using FlexSim to optimize workflows, enhance efficiency, and identify operational improvements, targeting annual savings of $100,000",
+        
+        "Validated RFID robot performance, achieving 99% inventory data collection accuracy across 10,000 SKUs using ROS and Gazebo, significantly reducing discrepancies and enhancing operational reliability.",
+        "Supported field testing and deployment of robotic systems at operational sites; collaborated with stakeholders to ensure performance objectives were met.",
+        "Developing a warehouse process simulation using FlexSim to optimize workflows, enhance efficiency, and identify operational improvements, targeting annual savings of $100,000.",
+        "Gained exposure to PLC programming (Allen-Bradley) and HMI interfaces during hardware integration and system testing phases.",
       ],
     },
     {
@@ -43,10 +46,10 @@ export const portfolio = {
       period: "Sep 2023 - Dec 2024",
       location: "Atlanta, United States",
       bullets: [
-        "Validated RFID robot performance, achieving 99% inventory data collection accuracy across 10,000 SKUs using ROS and Gazebo, significantly reducing discrepancies and enhancing operational reliability",
-        "Optimized operational workflows by developing interactive Power BI dashboards for real-time analytics, accelerating management decision-making by 25% and boosting overall efficiency across three warehouse facilities",
-        "Developed and debugged Linux-based robotics software, applying structured object-oriented design, basic multithreading, and systematic debugging to support continuous operation of automated systems",
-        "Gained practical experience in FANUC and DOOSAN robot programming through EWI-certified industrial robotics training, expanding hardware integration capabilities",
+        "Achieved Lean Six Sigma Yellow Belt Certification.",
+        "Optimized operational workflows by developing interactive Power BI dashboards for real-time analytics, accelerating management decision-making by 25% and boosting overall efficiency across three warehouse facilities.",
+        "Developed and debugged Linux-based robotics software, applying structured object-oriented design, basic multithreading, and systematic debugging to support continuous operation of automated systems.",
+        "Gained practical experience in FANUC and DOOSAN robot programming through EWI-certified industrial robotics training, expanding hardware integration capabilities.",
       ],
     },
     {
@@ -55,8 +58,11 @@ export const portfolio = {
       period: "Jan 2023 - Aug 2023",
       location: "Chicago, United States",
       bullets: [
-        "Supported performance improvement initiatives by analyzing material handling processes, contributing to actions that reduced downtime by 20% and increased throughput by 30%",
-        "Collaborated with cross-functional teams to integrate new automation solutions, improving overall system efficiency",
+        "Supported performance improvement initiatives by analyzing material handling processes, contributing to actions that reduced downtime by 20% and increased throughput by 30%.",
+        "Collaborated with cross-functional teams to integrate new automation solutions, improving overall system efficiency.",
+        "Communicated with and led discussions across cross-functional teams and stakeholders throughout project execution.",
+        "Maintained project scope, budget, quality, and schedule throughout the full project lifecycle.",
+        "Implemented solutions designed to deliver intended capabilities at the lowest project lifecycle cost.",
       ],
     },
   ],
@@ -169,13 +175,13 @@ export const portfolio = {
   ],
 
   certifications: [
-    { name: "Certified Green Belt", org: "Six Sigma", year: "2023", desc: "Lean manufacturing and process improvement certification" },
+    { name: "Certified Yellow Belt", org: "Gemba Academy", year: "2024", desc: "Lean manufacturing and process improvement certification" },
     { name: "Industrial Robotics Training", org: "EWI (Edison Welding Institute)", year: "2023", desc: "FANUC and DOOSAN robot programming certification" },
-    { name: "ROS Developer", org: "Self-Certified", year: "2022", desc: "Advanced ROS/ROS2 development and system integration" },
+    { name: "ROS Developer", org: "The Construct", year: "2024", desc: "Advanced ROS/ROS2 development and system integration" },
   ],
 
   additionalExpertise: [
-    { title: "Lean Six Sigma Methodology", desc: "Certified Green Belt with hands-on experience in process improvement and waste reduction" },
+    { title: "Lean Six Sigma Methodology", desc: "Certified yellow Belt with hands-on experience in process improvement and waste reduction" },
     { title: "Cross-Functional Collaboration", desc: "Experience working with stakeholders across engineering, operations, and management teams" },
     { title: "System Integration", desc: "Expertise in integrating robotic systems with PLCs, HMIs, and warehouse management systems" },
     { title: "Problem Solving", desc: "Root-cause analysis and systematic troubleshooting in complex industrial environments" },
@@ -189,22 +195,16 @@ export const portfolio = {
 
   testimonials: [
     {
-      quote: "Omar's expertise in robotics and automation has been instrumental in our warehouse optimization. His RFID inventory system achieved 99% accuracy and saved us hundreds of hours in manual counting. He's a true professional who delivers results.",
-      author: "Sarah Johnson",
-      role: "Operations Manager",
+      quote: "Omar approaches automation with a practical mindset, focusing on solving real problems rather than just building technically interesting solutions.",
+      author: "Will Smylie",
+      role: "Vice President Operations & Continuous Improvement",
       company: "Marmon Metals and Services",
     },
     {
-      quote: "Working with Omar on the FlexSim simulation project was a game-changer. His ability to translate operational challenges into actionable models helped us identify over $100K in potential savings. Highly recommend.",
-      author: "James Chen",
+      quote: "Omar is an exceptional industrial and robotics engineer who consistently demonstrated a rare combination of deep technical expertise, operational awareness, and innovative thinking.",
+      author: "David Guzman Jr",
       role: "Supply Chain Director",
-      company: "Marmon Holdings Inc.",
-    },
-    {
-      quote: "Omar's ROS/ROS2 skills and systematic approach to integration made our robot deployment smooth. He's thorough, collaborative, and always focused on delivering real business impact.",
-      author: "Maria Rodriguez",
-      role: "Engineering Lead",
-      company: "Marmon/Keystone",
+      company: "Group Director of Innovation and Data Intelligence",
     },
   ],
 
