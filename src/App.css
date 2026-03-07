@@ -120,6 +120,50 @@ body {
   border-color: var(--accent);
 }
 
+.header-lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: var(--bg-elevated);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.header-lang-toggle:hover {
+  background: var(--bg-card);
+  border-color: var(--accent);
+}
+
+.header-lang-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.header-lang-flag img {
+  display: block;
+  width: 18px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.header-lang-flag--active {
+  opacity: 1;
+}
+
 .logo-accent {
   color: var(--accent);
 }
