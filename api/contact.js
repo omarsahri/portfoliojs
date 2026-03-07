@@ -90,7 +90,7 @@ export default async function handler(req, res) {
       from: process.env.SMTP_USER,
       to: process.env.CONTACT_TO_EMAIL,
       replyTo: validated.email,
-      subject: `[Portfolio] ${validated.subject}`,
+      subject: `[PCF] ${validated.subject}`,
       text,
     })
     return res.status(200).json({ ok: true })
