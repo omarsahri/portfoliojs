@@ -61,6 +61,25 @@ export const portfolio = {
     },
   ],
 
+  education: [
+    {
+      degreeType: "MASTER'S DEGREE",
+      programName: "Robotics and Intelligent Autonomous Systems",
+      institution: "University of Cincinnati",
+      location: "Cincinnati, Ohio, United States",
+      countryCode: "US",
+      specializations: ["ROS/ROS2","Artificial Intelligence","Machine Learning", "Python/C++"],
+    },
+    {
+      degreeType: "BACHELOR'S & MASTER'S DEGREE",
+      programName: "Electrical and Mechanical Engineering",
+      institution: "Université de Lorraine, ENSEM",
+      location: "Nancy, France",
+      countryCode: "FR",
+      specializations: ["Motor Control","Drives","PID Control","Python/C++"],
+    },
+  ],
+
   skills: {
     programming: ["Python", "C++"],
     robotics: ["ROS/ROS2", "Gazebo", "Nav2", "Motion Planning", "SLAM & Localization"],

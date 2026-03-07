@@ -84,6 +84,7 @@ body {
   gap: 0.75rem;
   justify-self: end;
   margin-right: -0.4rem;
+  flex-shrink: 0;
 }
 
 .header .btn-header-cta {
@@ -91,6 +92,8 @@ body {
   padding: 0.55rem 1rem;
   font-size: 0.8rem !important;
   font-weight: 700 !important;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .header-theme-toggle {
@@ -99,9 +102,12 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 8px;
+  flex-shrink: 0;
   background: var(--bg-elevated);
   color: var(--text-muted);
   cursor: pointer;
@@ -349,6 +355,7 @@ section:nth-of-type(even) .about-me-picture {
 }
 
 .experience.section,
+.education.section,
 .projects.section,
 .certifications.section,
 .news.section,
@@ -595,6 +602,229 @@ section:nth-of-type(even) .about-me-picture {
   margin-top: 0.1em;
 }
 
+/* Education – layered cards with blue bg (fixed) and white card (tilts upright on hover) */
+.education-header-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 auto 0.75rem;
+  padding: 0.4rem 1rem;
+  background: rgba(9, 105, 218, 0.1);
+  border: 1px solid rgba(9, 105, 218, 0.35);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  width: fit-content;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-card {
+  position: relative;
+}
+
+/* Blue background layer, visible at edges */
+.education-card-bg {
+  position: absolute;
+  inset: -6px -6px -6px -6px;
+  background: rgba(9, 105, 218, 0.08);
+  border-radius: 18px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.education-card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.35s ease, border-color 0.2s;
+}
+
+.education-card:hover .education-card-inner {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.education-card-icon-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.education-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+}
+
+.education-card-icon svg {
+  display: block;
+}
+
+.education-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.education-degree-tag {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(9, 105, 218, 0.1);
+  border: 1px solid rgba(9, 105, 218, 0.35);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.education-program {
+  margin: 0 0 0.6rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--accent);
+  width: fit-content;
+}
+
+.education-institution {
+  margin: 0 0 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.education-institution-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(9, 105, 218, 0.12);
+  color: var(--accent);
+  border-radius: 10px;
+}
+
+.education-institution-icon svg {
+  display: block;
+}
+
+.education-institution-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.education-institution-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.education-institution-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.3;
+}
+
+.education-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.education-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.education-tag--location {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+
+.education-tag-flag {
+  flex-shrink: 0;
+  width: 26px;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+}
+
+.education-tag-flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.education-tag--specialty {
+  background: rgba(9, 105, 218, 0.1);
+  border: 1px solid rgba(9, 105, 218, 0.35);
+  color: var(--accent);
+}
+
+.education-tag-star {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .education-card-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-card-icon-wrap {
+    width: 52px;
+    height: 52px;
+  }
+
+  .education-card-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .education-card-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 /* Skills – 4 boxes in 2×2 grid, same span as work experience, blue hover effect */
 .skills-grid {
   display: grid;
@@ -625,16 +855,31 @@ section:nth-of-type(even) .about-me-picture {
 .skill-group-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
-.skill-group-icon {
+.skill-group-icon-box {
   flex-shrink: 0;
-  font-size: 1.65rem;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(9, 105, 218, 0.12);
   color: var(--accent);
+  border-radius: 10px;
+}
+
+.skill-group-icon {
+  font-size: 1.35rem;
+  line-height: 1;
   font-weight: 400;
+}
+
+.skill-group-icon-svg {
+  display: block;
+  color: inherit;
 }
 
 .skill-group h4 {

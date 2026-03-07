@@ -83,6 +83,7 @@ function App() {
           <nav className="nav">
             <button onClick={() => scrollTo('about')}>About</button>
             <button onClick={() => scrollTo('experience')}>Experience</button>
+            <button onClick={() => scrollTo('education')}>Education</button>
             <button onClick={() => scrollTo('skills')}>Skills</button>
             <button onClick={() => scrollTo('projects')}>Projects</button>
             <button onClick={() => scrollTo('certifications')}>Certifications</button>
@@ -172,13 +173,63 @@ function App() {
         </div>
       </section>
 
+      <section className="section education" id="education">
+        <h2 className="section-title"><span className="title-accent">Education</span></h2>
+        <p className="section-subtitle">Academic background in robotics and electrical engineering</p>
+        <div className="education-list">
+          {portfolio.education.map((edu, i) => (
+            <article key={i} className="education-card">
+              <div className="education-card-bg" aria-hidden />
+              <div className="education-card-inner">
+                <div className="education-card-icon-wrap">
+                  <div className="education-card-icon" aria-hidden>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  </div>
+                </div>
+                <div className="education-card-body">
+                  <span className="education-degree-tag">{edu.degreeType}</span>
+                  <h3 className="education-program">{edu.programName}</h3>
+                  <div className="education-institution">
+                    <div className="education-institution-icon" aria-hidden>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 21v-4h6v4"/><path d="M9 17h6"/></svg>
+                    </div>
+                    <div className="education-institution-text">
+                      <span className="education-institution-label">Institution</span>
+                      <span className="education-institution-name">{edu.institution}</span>
+                    </div>
+                  </div>
+                  <div className="education-tags">
+                    <span className="education-tag education-tag--location">
+                      {edu.countryCode && (
+                        <span className="education-tag-flag" aria-hidden title={edu.countryCode}>
+                          <img src={`https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/${edu.countryCode.toLowerCase()}.svg`} alt="" width="28" height="21" loading="lazy" />
+                        </span>
+                      )}
+                      {edu.location}
+                    </span>
+                    {edu.specializations?.map((spec, j) => (
+                      <span key={j} className="education-tag education-tag--specialty">
+                        <svg className="education-tag-star" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section skills" id="skills">
         <h2 className="section-title">Technical <span className="title-accent">Skills</span></h2>
         <p className="section-subtitle">A comprehensive toolkit for building advanced automation and robotics solutions</p>
         <div className="skills-grid">
           <div className="skill-group">
             <div className="skill-group-header">
-              <span className="skill-group-icon" aria-hidden>{'</>'}</span>
+              <div className="skill-group-icon-box" aria-hidden>
+                <svg className="skill-group-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
               <h4>Programming Languages</h4>
             </div>
             <div className="tags">
@@ -189,7 +240,9 @@ function App() {
           </div>
           <div className="skill-group">
             <div className="skill-group-header">
-              <span className="skill-group-icon" aria-hidden>⚙</span>
+              <div className="skill-group-icon-box" aria-hidden>
+                <svg className="skill-group-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+              </div>
               <h4>Robotics & Automation</h4>
             </div>
             <div className="tags">
@@ -200,7 +253,9 @@ function App() {
           </div>
           <div className="skill-group">
             <div className="skill-group-header">
-              <span className="skill-group-icon" aria-hidden>⚒</span>
+              <div className="skill-group-icon-box" aria-hidden>
+                <svg className="skill-group-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
               <h4>Industrial Automation</h4>
             </div>
             <div className="tags">
@@ -211,7 +266,9 @@ function App() {
           </div>
           <div className="skill-group">
             <div className="skill-group-header">
-              <span className="skill-group-icon" aria-hidden>◉</span>
+              <div className="skill-group-icon-box" aria-hidden>
+                <svg className="skill-group-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </div>
               <h4>Tools & Technologies</h4>
             </div>
             <div className="tags">
@@ -506,6 +563,7 @@ function App() {
             <h4>Quick Links</h4>
             <button type="button" onClick={() => scrollTo('about')}>About</button>
             <button type="button" onClick={() => scrollTo('experience')}>Experience</button>
+            <button type="button" onClick={() => scrollTo('education')}>Education</button>
             <button type="button" onClick={() => scrollTo('skills')}>Skills</button>
             <button type="button" onClick={() => scrollTo('projects')}>Projects</button>
             <button type="button" onClick={() => scrollTo('certifications')}>Certifications</button>
