@@ -2,8 +2,8 @@ export const portfolio = {
   name: "Omar Sahri",
   title: "Automation Engineer",
   location: "Paris, France",
-  tagline: "Robotics & Industrial Automation Specialist",
-  description: "Specializing in ROS/ROS2 development, industrial robotics, and warehouse automation. Passionate about building intelligent systems that drive efficiency and innovation.",
+  tagline: "Robotics & Industrial Automation Engineer",
+  description: "Specializing in industrial project management, industrial robotics, and ROS/ROS2 development, with a focus on warehouse automation. Passionate about building intelligent systems that drive efficiency and innovation.",
   email: "or.sahri@gmail.com",
   phone: "+33 7 59 72 11 31",
   linkedin: "https://www.linkedin.com/in/omarsahri",
@@ -17,8 +17,8 @@ export const portfolio = {
   ],
 
   whoIAm: {
-    bio: "Automation Engineer with hands-on experience in ROS/ROS2-based development for industrial robotics applications, including motion planning, navigation, and perception pipelines. Proficient in C++ and Python. Working knowledge of PLCs and experience supporting robot integration and system testing in warehouse and production environments. Certified Green Belt with experience contributing to lean, cross-functional teams, focusing on system deployment, root-cause troubleshooting, and continuous improvement in industrial environments.",
-    expertise: "Proficient in designing and implementing robotic systems with ROS/ROS2, integrating industrial robots (FANUC, DOOSAN), and developing warehouse automation solutions that deliver measurable business impact.",
+    bio: "Automation Engineer with hands-on experience in industrial project management, industrial robotics, and ROS/ROS2 development, with applications in motion planning, navigation, and perception pipelines. Proficient in C++ and Python. Working knowledge of PLCs and experience supporting robot integration and system testing in warehouse and production environments. Certified Green Belt with experience contributing to lean, cross-functional teams, focusing on system deployment, root-cause troubleshooting, and continuous improvement in industrial environments.",
+    expertise: "Industrial project management, industrial robotics, and ROS/ROS2-based system development, with hands-on experience in industrial automation integration from conception to deployment, including industrial robot integration (FANUC, DOOSAN) and warehouse automation solutions delivering measurable business impact.",
     expertiseTitle: "ROS/ROS2 Expert",
   },
 
@@ -28,9 +28,9 @@ export const portfolio = {
     {
       role: "Automation Engineer",
       company: "Marmon Holdings Inc. - Marmon Metals and Services",
-      period: "Jan 2025 - Present",
+      period: "Jan 2025 - Jan 2026",
       location: "Atlanta, United States",
-      current: true,
+      current: false,
       bullets: [
         "Gained exposure to PLC programming (Allen-Bradley) and HMI interfaces during hardware integration and system testing phases",
         "Supported field testing and deployment of robotic systems at operational sites; collaborated with stakeholders to ensure performance objectives were met",
