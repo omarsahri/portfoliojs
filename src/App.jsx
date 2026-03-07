@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { portfolio } from './data'
 import './App.css'
@@ -14,7 +14,21 @@ function App() {
   const [contactMessage, setContactMessage] = useState('')
   const [contactLoading, setContactLoading] = useState(false)
   const [contactStatus, setContactStatus] = useState(null) // null | 'success' | 'error'
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') return 'light'
+    const stored = localStorage.getItem('portfolio-theme')
+    if (stored === 'dark' || stored === 'light') return stored
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+    return 'light'
+  })
   const testimonials = portfolio.testimonials
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('portfolio-theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'))
   const nextTestimonial = () => setTestimonialIndex((i) => (i + 1) % testimonials.length)
   const prevTestimonial = () => setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)
 
@@ -76,7 +90,22 @@ function App() {
             <button onClick={() => scrollTo('testimonials')}>Testimonials</button>
             <button onClick={() => scrollTo('contact')}>Contact</button>
           </nav>
-          <button type="button" className="btn btn-primary btn-header-cta" onClick={() => scrollTo('contact')}>Let's Connect</button>
+          <div className="header-actions">
+            <button type="button" className="btn btn-primary btn-header-cta" onClick={() => scrollTo('contact')}>Let's Connect</button>
+            <button
+              type="button"
+              className="header-theme-toggle"
+              onClick={toggleTheme}
+              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              title={theme === 'light' ? 'Dark mode' : 'Light mode'}
+            >
+              {theme === 'light' ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
