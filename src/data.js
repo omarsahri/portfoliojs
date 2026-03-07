@@ -199,12 +199,14 @@ export const portfolio = {
       author: "Will Smylie",
       role: "Vice President Operations & Continuous Improvement",
       company: "Marmon Metals and Services",
+      image: "/testimonials/will-smylie.png",
     },
     {
       quote: "Omar is an exceptional industrial and robotics engineer who consistently demonstrated a rare combination of deep technical expertise, operational awareness, and innovative thinking.",
       author: "David Guzman Jr",
       role: "Supply Chain Director",
       company: "Group Director of Innovation and Data Intelligence",
+      image: "/testimonials/david-guzman.png",
     },
   ],
 

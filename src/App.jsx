@@ -424,11 +424,27 @@ function App() {
                 className={`testimonial-card ${i === testimonialIndex ? 'active' : ''}`}
                 aria-hidden={i !== testimonialIndex}
               >
-                <p>"{t.quote}"</p>
-                <footer>
-                  <strong>{t.author}</strong>
-                  <span>{t.role}, {t.company}</span>
-                </footer>
+                <div className="testimonial-card-inner">
+                  <div className={`testimonial-photo-wrap ${t.author === 'Will Smylie' || t.author === 'David Guzman Jr' ? 'testimonial-photo-wrap--crop-edges' : ''}`}>
+                    {t.image && (
+                      <img
+                        src={t.image}
+                        alt=""
+                        className="testimonial-photo"
+                        width={160}
+                        height={160}
+                        loading="lazy"
+                      />
+                    )}
+                  </div>
+                  <div className="testimonial-content">
+                    <p>"{t.quote}"</p>
+                    <footer>
+                      <strong>{t.author}</strong>
+                      <span>{t.role}, {t.company}</span>
+                    </footer>
+                  </div>
+                </div>
               </blockquote>
             ))}
           </div>
