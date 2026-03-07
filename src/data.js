@@ -204,8 +204,8 @@ export const portfolio = {
     {
       quote: "Omar is an exceptional industrial and robotics engineer who consistently demonstrated a rare combination of deep technical expertise, operational awareness, and innovative thinking.",
       author: "David Guzman Jr",
-      role: "Supply Chain Director",
-      company: "Group Director of Innovation and Data Intelligence",
+      role: "Group Director of Innovation and Data Intelligence",
+      company: "Marmon Metals and Services",
       image: "/testimonials/david-guzman.png",
     },
   ],
