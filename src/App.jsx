@@ -5,7 +5,6 @@ import './App.css'
 import heroBg from './assets/background.png'
 
 function App() {
-  const [expandedProject, setExpandedProject] = useState(null)
   const [expandedNews, setExpandedNews] = useState(null)
   const [testimonialIndex, setTestimonialIndex] = useState(0)
   const [contactName, setContactName] = useState('')
@@ -85,7 +84,6 @@ function App() {
             <button onClick={() => scrollTo('experience')}>Experience</button>
             <button onClick={() => scrollTo('education')}>Education</button>
             <button onClick={() => scrollTo('skills')}>Skills</button>
-            <button onClick={() => scrollTo('projects')}>Projects</button>
             <button onClick={() => scrollTo('certifications')}>Certifications</button>
             <button onClick={() => scrollTo('news')}>News</button>
             <button onClick={() => scrollTo('testimonials')}>Testimonials</button>
@@ -118,7 +116,7 @@ function App() {
         <p className="hero-tagline">{portfolio.tagline}</p>
         <p className="hero-desc">{portfolio.description}</p>
         <div className="hero-cta">
-          <button className="btn btn-primary" onClick={() => scrollTo('projects')}>View My Work <span className="btn-arrow">→</span></button>
+          <button className="btn btn-primary" onClick={() => scrollTo('experience')}>View My Work <span className="btn-arrow">→</span></button>
           <button className="btn btn-outline" onClick={() => scrollTo('contact')}>Let's Connect</button>
         </div>
         <div className="hero-stats stats-grid">
@@ -277,79 +275,6 @@ function App() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section projects" id="projects">
-        <h2 className="section-title">Featured <span className="title-accent">Projects</span></h2>
-        <p className="section-subtitle">Deep-dive into my most impactful automation and robotics projects</p>
-        <div className="projects-grid">
-          {portfolio.projects.map((proj) => {
-            const isExpanded = expandedProject === proj.id;
-            const caseStudyId = `case-study-${proj.id}`;
-            return (
-              <div key={proj.id} className="project-card">
-                <div className="project-card-top">
-                  <div className="project-card-media">
-                    <span className="project-category">{proj.category}</span>
-                    {proj.image ? (
-                      <img src={proj.image} alt="" />
-                    ) : (
-                      <div className="project-card-placeholder">No image</div>
-                    )}
-                  </div>
-                  <div className="project-card-body">
-                    <h3>{proj.title}</h3>
-                    <p className="project-desc">{proj.description}</p>
-                    <p className="project-meta">{proj.period} • {proj.location}</p>
-                    <button
-                      type="button"
-                      className={`btn btn-outline project-case-study-btn ${isExpanded ? 'is-expanded' : ''} ${!proj.caseStudy ? 'project-case-study-btn--disabled' : ''}`}
-                      onClick={() => proj.caseStudy && setExpandedProject(isExpanded ? null : proj.id)}
-                      aria-expanded={proj.caseStudy ? isExpanded : undefined}
-                      aria-controls={proj.caseStudy ? caseStudyId : undefined}
-                      disabled={!proj.caseStudy}
-                    >
-                      {isExpanded ? 'Show Less' : 'View Case Study'}
-                      <span className="project-btn-arrow" aria-hidden>▼</span>
-                    </button>
-                  </div>
-                </div>
-                {isExpanded && proj.caseStudy && (
-                  <div id={caseStudyId} className="case-study" role="region" aria-label="Case study details">
-                    <h4>The Challenge</h4>
-                    <p>{proj.caseStudy.challenge}</p>
-                    <h4>The Solution</h4>
-                    <p>{proj.caseStudy.solution}</p>
-                    <h4>Technologies Used</h4>
-                    <div className="tags">
-                      {proj.caseStudy.technologies.map((t, i) => (
-                        <span key={i} className="tag">{t}</span>
-                      ))}
-                    </div>
-                    <div className="case-study-two-cols">
-                      <div>
-                        <h4>Key Features</h4>
-                        <ul>
-                          {proj.caseStudy.features.map((f, i) => (
-                            <li key={i}>{f}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4>Results & Impact</h4>
-                        <ul>
-                          {proj.caseStudy.results.map((r, i) => (
-                            <li key={i}>{r}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
         </div>
       </section>
 
@@ -581,7 +506,6 @@ function App() {
             <button type="button" onClick={() => scrollTo('experience')}>Experience</button>
             <button type="button" onClick={() => scrollTo('education')}>Education</button>
             <button type="button" onClick={() => scrollTo('skills')}>Skills</button>
-            <button type="button" onClick={() => scrollTo('projects')}>Projects</button>
             <button type="button" onClick={() => scrollTo('certifications')}>Certifications</button>
             <button type="button" onClick={() => scrollTo('news')}>News</button>
             <button type="button" onClick={() => scrollTo('testimonials')}>Testimonials</button>
