@@ -33,7 +33,7 @@ export const portfolio = {
       location: "Atlanta, United States",
       current: false,
       bullets: [
-        
+        "Achieved Lean Six Sigma Green Belt Certification.",
         "Validated RFID robot performance, achieving 99% inventory data collection accuracy across 10,000 SKUs using ROS and Gazebo, significantly reducing discrepancies and enhancing operational reliability.",
         "Supported field testing and deployment of robotic systems at operational sites; collaborated with stakeholders to ensure performance objectives were met.",
         "Developing a warehouse process simulation using FlexSim to optimize workflows, enhance efficiency, and identify operational improvements, targeting annual savings of $100,000.",
@@ -175,7 +175,7 @@ export const portfolio = {
   ],
 
   certifications: [
-    { name: "Certified Yellow Belt", org: "Gemba Academy", year: "2024", desc: "Lean manufacturing and process improvement certification" },
+    { name: "Certified Green Belt", org: "Gemba Academy", year: "2026", desc: "Lean manufacturing and process improvement certification" },
     { name: "Industrial Robotics Training", org: "EWI (Edison Welding Institute)", year: "2023", desc: "FANUC and DOOSAN robot programming certification" },
     { name: "ROS Developer", org: "The Construct", year: "2024", desc: "Advanced ROS/ROS2 development and system integration" },
   ],
