@@ -3,6 +3,15 @@ import { Analytics } from '@vercel/analytics/react'
 import { portfolio } from './data'
 import './App.css'
 import heroBg from './assets/background.png'
+import industrialRobots1 from './assets/projects/industrial-robots-1.png'
+import industrialRobots2 from './assets/projects/industrial-robots-2.png'
+import industrialRobots3 from './assets/projects/industrial-robots-3.png'
+
+const projectImageUrls = {
+  '/projects/industrial-robots-1.png': industrialRobots1,
+  '/projects/industrial-robots-2.png': industrialRobots2,
+  '/projects/industrial-robots-3.png': industrialRobots3,
+}
 
 function App() {
   const [expandedProject, setExpandedProject] = useState(null)
@@ -293,7 +302,7 @@ function App() {
                   <div className="project-card-media">
                     <span className="project-category">{proj.category}</span>
                     {proj.image ? (
-                      <img src={proj.image} alt="" />
+                      <img src={projectImageUrls[proj.image] || proj.image} alt="" />
                     ) : (
                       <div className="project-card-placeholder">No image</div>
                     )}
@@ -317,28 +326,43 @@ function App() {
                 </div>
                 {isExpanded && proj.caseStudy && (
                   <div id={caseStudyId} className="case-study" role="region" aria-label="Case study details">
-                    <h4>The Challenge</h4>
-                    <p>{proj.caseStudy.challenge}</p>
-                    <h4>The Solution</h4>
-                    <p>{proj.caseStudy.solution}</p>
-                    <h4>Technologies Used</h4>
-                    <div className="tags">
-                      {proj.caseStudy.technologies.map((t, i) => (
-                        <span key={i} className="tag">{t}</span>
-                      ))}
+                    {proj.caseStudy.images && proj.caseStudy.images.length > 0 && (
+                      <div className="case-study-gallery">
+                        {proj.caseStudy.images.map((imgSrc, i) => (
+                          <div key={i} className="case-study-gallery-item">
+                            <img src={projectImageUrls[imgSrc] || imgSrc} alt="" loading="lazy" />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    <div className="case-study-block">
+                      <h4 className="case-study-heading case-study-heading--blue">The Challenge</h4>
+                      <p>{proj.caseStudy.challenge}</p>
+                    </div>
+                    <div className="case-study-block">
+                      <h4 className="case-study-heading case-study-heading--blue">The Solution</h4>
+                      <p>{proj.caseStudy.solution}</p>
+                    </div>
+                    <div className="case-study-block">
+                      <h4 className="case-study-heading case-study-heading--blue">Technologies Used</h4>
+                      <div className="case-study-tech-tags">
+                        {proj.caseStudy.technologies.map((tech, i) => (
+                          <span key={i} className="case-study-tech-tag">{tech}</span>
+                        ))}
+                      </div>
                     </div>
                     <div className="case-study-two-cols">
-                      <div>
-                        <h4>Key Features</h4>
-                        <ul>
+                      <div className="case-study-block case-study-features">
+                        <h4 className="case-study-heading case-study-heading--blue">Key Features</h4>
+                        <ul className="case-study-list case-study-list--blue">
                           {proj.caseStudy.features.map((f, i) => (
                             <li key={i}>{f}</li>
                           ))}
                         </ul>
                       </div>
-                      <div>
-                        <h4>Results & Impact</h4>
-                        <ul>
+                      <div className="case-study-block case-study-results">
+                        <h4 className="case-study-heading case-study-heading--green">Results & Impact</h4>
+                        <ul className="case-study-list case-study-list--green">
                           {proj.caseStudy.results.map((r, i) => (
                             <li key={i}>{r}</li>
                           ))}
